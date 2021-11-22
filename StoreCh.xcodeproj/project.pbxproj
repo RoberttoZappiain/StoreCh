@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F17E8063274BEB440047260E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E8062274BEB440047260E /* HomeScreen.swift */; };
+		F17E8065274C001A0047260E /* DetallesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E8064274C001A0047260E /* DetallesScreen.swift */; };
 		F1BC97CD274B254500019EFD /* StoreChApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC97CC274B254500019EFD /* StoreChApp.swift */; };
 		F1BC97CF274B254500019EFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC97CE274B254500019EFD /* ContentView.swift */; };
 		F1BC97D1274B254800019EFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BC97D0274B254800019EFD /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F17E8062274BEB440047260E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		F17E8064274C001A0047260E /* DetallesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallesScreen.swift; sourceTree = "<group>"; };
 		F1BC97C9274B254500019EFD /* StoreCh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreCh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BC97CC274B254500019EFD /* StoreChApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreChApp.swift; sourceTree = "<group>"; };
 		F1BC97CE274B254500019EFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,10 +40,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F17E8061274BEACF0047260E /* Pantallas */ = {
+			isa = PBXGroup;
+			children = (
+				F17E8062274BEB440047260E /* HomeScreen.swift */,
+				F17E8064274C001A0047260E /* DetallesScreen.swift */,
+			);
+			path = Pantallas;
+			sourceTree = "<group>";
+		};
 		F1BC97C0274B254500019EFD = {
 			isa = PBXGroup;
 			children = (
-				F1BC97DA274B298A00019EFD /* Fonts */,
 				F1BC97CB274B254500019EFD /* StoreCh */,
 				F1BC97CA274B254500019EFD /* Products */,
 			);
@@ -56,6 +68,8 @@
 		F1BC97CB274B254500019EFD /* StoreCh */ = {
 			isa = PBXGroup;
 			children = (
+				F17E8061274BEACF0047260E /* Pantallas */,
+				F1BC97DA274B298A00019EFD /* Fonts */,
 				F1BC97CC274B254500019EFD /* StoreChApp.swift */,
 				F1BC97CE274B254500019EFD /* ContentView.swift */,
 				F1BC97D0274B254800019EFD /* Assets.xcassets */,
@@ -78,7 +92,8 @@
 				F1BC97DB274B29CA00019EFD /* PlayfairDisplay-Bold.ttf */,
 				F1BC97DC274B29CA00019EFD /* PlayfairDisplay-Regular.ttf */,
 			);
-			path = Fonts;
+			name = Fonts;
+			path = ../Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +169,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1BC97CF274B254500019EFD /* ContentView.swift in Sources */,
+				F17E8065274C001A0047260E /* DetallesScreen.swift in Sources */,
 				F1BC97CD274B254500019EFD /* StoreChApp.swift in Sources */,
+				F17E8063274BEB440047260E /* HomeScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
