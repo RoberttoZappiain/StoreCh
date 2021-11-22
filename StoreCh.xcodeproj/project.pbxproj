@@ -11,6 +11,8 @@
 		F1BC97CF274B254500019EFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC97CE274B254500019EFD /* ContentView.swift */; };
 		F1BC97D1274B254800019EFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BC97D0274B254800019EFD /* Assets.xcassets */; };
 		F1BC97D4274B254800019EFD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BC97D3274B254800019EFD /* Preview Assets.xcassets */; };
+		F1BC97DD274B29CA00019EFD /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1BC97DB274B29CA00019EFD /* PlayfairDisplay-Bold.ttf */; };
+		F1BC97DE274B29CA00019EFD /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1BC97DC274B29CA00019EFD /* PlayfairDisplay-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		F1BC97CE274B254500019EFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F1BC97D0274B254800019EFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1BC97D3274B254800019EFD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F1BC97DB274B29CA00019EFD /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PlayfairDisplay-Bold.ttf"; path = "StoreCh/Fonts/PlayfairDisplay-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		F1BC97DC274B29CA00019EFD /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PlayfairDisplay-Regular.ttf"; path = "StoreCh/Fonts/PlayfairDisplay-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 		F1BC97C0274B254500019EFD = {
 			isa = PBXGroup;
 			children = (
+				F1BC97DA274B298A00019EFD /* Fonts */,
 				F1BC97CB274B254500019EFD /* StoreCh */,
 				F1BC97CA274B254500019EFD /* Products */,
 			);
@@ -65,6 +70,15 @@
 				F1BC97D3274B254800019EFD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F1BC97DA274B298A00019EFD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F1BC97DB274B29CA00019EFD /* PlayfairDisplay-Bold.ttf */,
+				F1BC97DC274B29CA00019EFD /* PlayfairDisplay-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +139,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1BC97DE274B29CA00019EFD /* PlayfairDisplay-Regular.ttf in Resources */,
+				F1BC97DD274B29CA00019EFD /* PlayfairDisplay-Bold.ttf in Resources */,
 				F1BC97D4274B254800019EFD /* Preview Assets.xcassets in Resources */,
 				F1BC97D1274B254800019EFD /* Assets.xcassets in Resources */,
 			);
