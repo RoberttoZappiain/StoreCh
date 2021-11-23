@@ -11,7 +11,7 @@ import SwiftUI
 struct StoreChApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreen()
         }
     }
 }

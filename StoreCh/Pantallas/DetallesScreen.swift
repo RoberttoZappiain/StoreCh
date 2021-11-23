@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetallesScreen: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         ZStack{
             Color("Bg")
@@ -16,11 +17,12 @@ struct DetallesScreen: View {
                 Image("chair_1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .edgesIgnoringSafeArea(.top)
                 
                 DescriptionView()
                     .offset(y: -40)
             }
+            .edgesIgnoringSafeArea(.top)
+
             HStack{
                 Text("$1299")
                     .font(.title)
@@ -44,6 +46,8 @@ struct DetallesScreen: View {
             .frame(maxHeight: .infinity, alignment: .bottom)
         }
         .edgesIgnoringSafeArea(.bottom)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: CustomBackButtonView(action: {presentationMode.wrappedValue.dismiss()}), trailing: Image("threeDot"))
     }
 }
 //Codigo necesario para border circular
@@ -175,5 +179,19 @@ struct ColorDotView: View {
 struct DetallesScreen_Previews: PreviewProvider {
     static var previews: some View {
         DetallesScreen()
+    }
+}
+
+struct CustomBackButtonView: View {
+    let action: ()-> Void
+    var body: some View {
+        Button(action: action, label: {
+            Image(
+                systemName: "chevron.backward")
+                .padding(.all, 12)
+                .background(Color.white)
+                .cornerRadius(8.0)
+        })
+       
     }
 }

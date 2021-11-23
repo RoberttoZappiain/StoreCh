@@ -8,96 +8,100 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    //Para icultar el espacio que hace un navegationview
+    @State private var fullScreen = false
+    //
+    
     //Se usa en el foreach del scrollview para mantener el estado de la linea cafe
     @State private var selectedIndex: Int = 0
     //
+    
     private let categories = ["Todo", "Sillas", "Sofa", "Lamparas", "Cocina", "Sencillas" ]
     var body: some View {
-        ZStack{
-            Color("Bg")
-                .edgesIgnoringSafeArea(.all)
-            
-            ScrollView{
-                VStack(alignment: .leading){
-                    AppBarView()
-                    TextTitleView()
-                        .padding()
-                    
-                    SearchAndScanView()
-                    
-                    ScrollView(.horizontal, showsIndicators: false){
-                        HStack{
-                            ForEach(0 ..< categories.count){i in
-                                CategoryView(isActive: i == selectedIndex, text: categories[i])
-                                    .onTapGesture {
-                                        selectedIndex = i
-                                    }
+        NavigationView {
+            ZStack{
+                Color("Bg")
+                    .edgesIgnoringSafeArea(.all)
+                
+                ScrollView{
+                    VStack(alignment: .leading){
+                        AppBarView()
+                        TextTitleView()
+                            .padding()
+                        
+                        SearchAndScanView()
+                        
+                        ScrollView(.horizontal, showsIndicators: false){
+                            HStack{
+                                ForEach(0 ..< categories.count){i in
+                                    CategoryView(isActive: i == selectedIndex, text: categories[i])
+                                        .onTapGesture {
+                                            selectedIndex = i
+                                        }
+                                }
                             }
+                            .padding()
                         }
-                        .padding()
-                    }
-                    
-                    
-                    Text("Popular")
-                        .font(.custom("PlayfairDisplay-Bold", size: 24))
-                        .padding(.horizontal)
-                    
-                    ScrollView(.horizontal, showsIndicators: false){
-                        HStack{
-                            ForEach(0 ..< 4){ index in
-                                ProductCardView(image: Image("chair_\(index + 1)"),size:210)
-                                
+                        
+                        
+                        Text("Popular")
+                            .font(.custom("PlayfairDisplay-Bold", size: 24))
+                            .padding(.horizontal)
+                        
+                        ScrollView(.horizontal, showsIndicators: false){
+                            HStack{
+                                ForEach(0 ..< 4){ index in
+                                    NavigationLink(destination: DetallesScreen(),
+                                                   label:{
+                                        ProductCardView(image: Image("chair_\(index + 1)"),size:210)
+                                    })
+                                        .navigationBarHidden(true)
+                                        .foregroundColor(.black)
+                                }
+                                .padding(.trailing)
                             }
-                            .padding(.trailing)
+                            .padding(.leading)
                         }
-                        .padding(.leading)
-                    }
-                    
-                    
-                    Text("Nuevo")
-                        .font(.custom("PlayfairDisplay-Bold", size: 24))
-                        .padding(.horizontal)
-                        .padding(.top)
-                    
-                    ScrollView(.horizontal, showsIndicators: false){
-                        HStack{
-                            ForEach(0 ..< 4){ index in
-                                ProductCardView(image: Image("chair_\(index + 1)"),size:180)
-                                
+                        
+                        
+                        Text("Nuevo")
+                            .font(.custom("PlayfairDisplay-Bold", size: 24))
+                            .padding(.horizontal)
+                            .padding(.top)
+                        
+                        ScrollView(.horizontal, showsIndicators: false){
+                            HStack{
+                                ForEach(0 ..< 4){ index in
+                                    ProductCardView(image: Image("chair_\(index + 1)"),size:180)
+                                    
+                                }
+                                .padding(.trailing)
                             }
-                            .padding(.trailing)
+                            .padding(.leading)
                         }
-                        .padding(.leading)
                     }
                 }
-            }
-            
-            
-            
-            
-            
-            
-            
-            //FINALIZA SCROLLVIEW PADRE
-            
-            //CUSTOM NAVBAR BUTTOM
-            HStack{
+                //FINALIZA SCROLLVIEW PADRE
                 
-                BottomNavBarItem(image: Image("Home")){}
-                BottomNavBarItem(image: Image("fav")){}
-                BottomNavBarItem(image: Image("shop")){}
-                BottomNavBarItem(image: Image("User")){}
+                //CUSTOM NAVBAR BUTTOM
+                HStack{
+                    
+                    BottomNavBarItem(image: Image("Home")){}
+                    BottomNavBarItem(image: Image("fav")){}
+                    BottomNavBarItem(image: Image("shop")){}
+                    BottomNavBarItem(image: Image("User")){}
+                    
+                }
+                .padding()
+                .background(Color(.white))
+                .clipShape(Capsule())
+                .padding(.horizontal)
+                .shadow(color: Color.black.opacity(0.15), radius: 8, x: 2, y: 6)
+                .frame(maxHeight: .infinity, alignment: .bottom)
                 
             }
-            .padding()
-            .background(Color(.white))
-            .clipShape(Capsule())
-            .padding(.horizontal)
-            .shadow(color: Color.black.opacity(0.15), radius: 8, x: 2, y: 6)
-            .frame(maxHeight: .infinity, alignment: .bottom)
-            
+        }//CIERRE DE ZSTACK
         }
-    }
 }
 
 struct HomeScreen_Previews: PreviewProvider {
@@ -109,23 +113,26 @@ struct HomeScreen_Previews: PreviewProvider {
 
 struct AppBarView: View {
     var body: some View{
-        HStack{
-            Button(action:{}){
-                Image("menu")
-                    .padding()
-                    .background(Color(.white))
-                    .cornerRadius(10.0)
+        
+            HStack{
+                Button(action:{}){
+                    Image("menu")
+                        .padding()
+                        .background(Color(.white))
+                        .cornerRadius(10.0)
+                }
+                
+                Spacer()
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Image("Profile")
+                        .resizable()
+                        .frame(width: 42, height: 42)
+                        .cornerRadius(10.0)
+                }
             }
-            
-            Spacer()
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                Image("Profile")
-                    .resizable()
-                    .frame(width: 42, height: 42)
-                    .cornerRadius(10.0)
-            }
-        }
-        .padding(.horizontal)
+            .padding(.horizontal)
+        
+       
     }
 }
 struct TextTitleView: View {
@@ -191,6 +198,7 @@ struct ProductCardView: View {
     let image : Image
     let size : CGFloat
     var body: some View{
+        
         VStack{
             image
                 .resizable()
@@ -206,12 +214,26 @@ struct ProductCardView: View {
                 ForEach(0 ..< 5){ item in
                     Image("star")
                 }
+                
                 Spacer()
                 
                 Text("$1299")
                     .font(.title3)
                     .fontWeight(.bold)
             }
+            HStack{
+                NavigationLink(destination: DetallesScreen()){
+                    
+                    
+                    Text("Comprar")
+                        .padding()
+                        .background(Color("Primary"))
+                        .foregroundColor(.white)
+                        .cornerRadius(20.0)
+                        .frame(maxWidth: .infinity)
+                }
+            }
+            
         }
         
         .frame(width: 210)
@@ -230,3 +252,4 @@ struct BottomNavBarItem: View{
         })
     }
 }
+
