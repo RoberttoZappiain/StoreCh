@@ -10,10 +10,11 @@ import SwiftUI
 struct DetallesScreen: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
+        
         ZStack{
-            Color("Bg")
-                .edgesIgnoringSafeArea(.all)
             ScrollView{
+                Color("Bg")
+                    .edgesIgnoringSafeArea(.all)
                 Image("chair_1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -70,6 +71,7 @@ extension View{
 
 struct DescriptionView: View {
     var body: some View {
+        
         VStack(alignment: .leading){
             Text("Silla de lujo \nSweet")
                 .font(.title)
@@ -86,13 +88,13 @@ struct DescriptionView: View {
             Text("Descripcion")
                 .fontWeight(.medium)
                 .padding(.vertical, 8)
-            Text("La silla Sweet de lujo esta dise;ada para espacios cerrados y habitaciones en las que la luz sea todo lo que pueda observar")
+            Text("La silla Sweet de lujo esta diseñada para espacios cerrados y habitaciones en las que la luz sea todo lo que pueda observar")
                 .lineSpacing(8.0)
                 .opacity(0.6)
             
             HStack(alignment: .top){
                 VStack(alignment: .leading){
-                    Text("Tama;o")
+                    Text("Tamaño")
                         .fontWeight(.semibold)
                         .padding(.bottom,4 )
                     Text("Altura: 120cm")
@@ -195,3 +197,4 @@ struct CustomBackButtonView: View {
        
     }
 }
+
